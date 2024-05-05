@@ -1,38 +1,20 @@
-# create-svelte
+# hommdle
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+A small webpage game like wordle where you guessing units or heros form the game "Heroes of Might and Magic III";
+Build with Svelte <3 <3;
+There is not yet a production url;
 
-## Creating a project
+## Running 
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+To run the dev version of project use (idealy: bun):
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+  bun install
+  bun run dev -- --open
 ```
 
-## Building
+## License & Credits
 
-To create a production version of your app:
+Its MIT use this as you want!
 
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+@CodingWithMoMo

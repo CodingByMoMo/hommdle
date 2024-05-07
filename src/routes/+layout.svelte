@@ -9,7 +9,7 @@
   <nav>
     <ul>
       <li><a href="/">Unit guessing</a></li>
-      <li><a href="/hard">Heros guessing</a></li>
+      <li><a href="/heroes">Heros guessing</a></li>
       <li><a href="/about">About hommdle</a></li>
     </ul>
   </nav>

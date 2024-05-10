@@ -33,7 +33,7 @@
       </ul>
     </div>
   </div>
-  <div> © {year} @CodingWithMoMo and _ under the MIT license.</div>
+  <div> © {year} @CodingWithMoMo and MrPorKon under the MIT license.</div>
 </footer>
 
 <style>

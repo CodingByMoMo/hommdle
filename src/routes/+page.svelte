@@ -1,32 +1,61 @@
 <script>
-	import GuessList from "$lib/GuessList.svelte";
-  import SearchBar from "$lib/SearchBar.svelte";
-  import {units} from "../lib/units";
+	import GuessList from '$lib/GuessList.svelte';
+	import SearchBar from '$lib/SearchBar.svelte';
+	import { units } from '../lib/units';
 
-  const MAX_TRIES = 5;
-  const CURRENT = units[1];
+	const rand = Math.floor(Math.random() * units.length);
+	const MAX_TRIES = 5;
+	const CURRENT = units[rand];
 
-  let tries = $state(0);
-  /** @type{String[] } */
-  let triesList = $state([]);
+	let tries = $state(0);
+	/** @type{String[] } */
+	let triesList = $state([]);
 
-  /** @type{function(KeyboardEvent,String): void}*/ 
-  function onkeydown(event, value) {
-    if(event.code === "Enter") {
-      console.log(value);
-      tries += 1;
-      triesList.push(value)
-      //search for the units or herose
-    }
-  }
-
+	/** @type{function(KeyboardEvent,String): void}*/
+	function onkeydown(event, value) {
+		if (event.code === 'Enter') {
+			console.log(value);
+			tries += 1;
+			triesList.push(value);
+			//search for the units or herose
+		}
+	}
 </script>
 
-
-<h1> Unit guessing</h1>
-
-<SearchBar {onkeydown} type="units" />
-
-<span>Guess {tries} of {MAX_TRIES}</span>
-
+<div class="header">
+	<h1>Guess the unit of the day!</h1>
+</div>
+<div class="search-container">
+	<div class="tries"><span>Guess {tries} of {MAX_TRIES}</span></div>
+	<SearchBar {onkeydown} type="units" guesses={triesList} />
+</div>
 <GuessList guessList={triesList} type="units" current={CURRENT} />
+
+<style>
+	.header {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.header h1 {
+		font-size: 2rem;
+		font-weight: 700;
+	}
+
+	.tries {
+		width: 56%;
+		margin: 8px;
+		float: right;
+		display: flex;
+		justify-content: right;
+	}
+
+	.search-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+</style>

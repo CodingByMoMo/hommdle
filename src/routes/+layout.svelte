@@ -25,23 +25,25 @@
 	</nav>
 </header>
 
-<slot />
+<slot class="slot" />
 
 <footer>
 	<div class="fmenu">
-		<div class="fitem">Section for some shit text xd</div>
-		<div class="fitem fmiddle">
+		<div class="fitem">
 			<ul>
-				<li class="lil-menu-header"><span>Menu</span></li>
-				<li>Unit guessing</li>
-				<li>Heros guessing</li>
-				<li>Unit glossary</li>
-				<li>Heros glossary</li>
-				<li>Hota Petition</li>
+				<li class="li-head"><span>Menu</span></li>
+				<li><a href="/">Unit guessing</a></li>
+				<li><a href="/heroes">Heros guessing</a></li>
+				<li><a href="/glossary/unit">Unit glossary</a></li>
+				<li><a href="/glossary/heroes">Heros glossary</a></li>
+				<li><a href="/petition">Hota Petition</a></li>
 			</ul>
 		</div>
-		<div class="fitem">
-			<div><span>Vist our socials</span></div>
+		<div class="fitem text">
+			<span class="topic">Enjoy the game of hommdle!</span><br />
+			hommdle is a guessing game about our favorite game Heroes of Might and Magic III. The rules are
+			easy, type the name of unit or hero and check if the specification are matching. Grenn means you
+			guess correctly, red is wrong and orange that you are near. Good luck.
 		</div>
 	</div>
 	<div class="copyright">
@@ -50,6 +52,18 @@
 </footer>
 
 <style>
+	:global(:root) {
+		--bg-color: #0a0807;
+		--accent-color: #be4b35;
+		--accent-hover: #7c3122;
+		--text: #efeff0;
+		--text-hover: #c2c3c8;
+		--bg-accent: #1f1814;
+		--wrong: #a70000;
+		--success: #0c7200;
+		--near: #be5700;
+	}
+
 	:global(html) {
 		font-size: 16px;
 		font-family: 'Work Sans', sans-serif;
@@ -61,16 +75,16 @@
 		display: flex;
 		width: 100dvw;
 		flex-direction: column;
-		color: #fdfdfd;
+		color: var(--text);
 		margin: 0;
-		background-color: #1d1a26;
+		background-color: var(--bg-color);
 	}
 	header {
+		padding-top: 24px;
 		display: flex;
 		flex-direction: column;
 	}
 	.logo-container {
-		width: calc(100dvh - 20px);
 		height: 150px;
 		padding: 10px;
 		display: flex;
@@ -88,41 +102,66 @@
 	}
 
 	nav ul li {
-		border: solid 1px #fdfdfd;
+		color: var(--text);
+		border-bottom: solid 1px var(--accent-color);
 		margin: 0px 16px;
-		padding: 8px 16px;
-		border-radius: 15px;
+		padding: 4px 16px;
 	}
 
 	nav ul li:hover {
-		border-color: #ebebeb;
+		color: var(--text-hover);
+		border-color: var(--accent-hover);
 	}
 
 	a {
-		color: #fdfdfd;
+		color: inherit;
 		font-size: 1.125rem;
 		text-decoration: none;
 	}
+
+	.slot {
+		height: auto;
+	}
+
 	footer {
-		position: absolute;
-		bottom: 0;
 		width: 100%;
 	}
 
 	.fmenu {
 		display: flex;
 		flex-direction: row;
+		justify-content: space-evenly;
 		margin: 8px 16px;
 	}
 
-	.fmiddle {
-		border-right: 1px solid #060508;
-		border-left: 1px solid #060508;
+	.fmenu ul {
+		list-style: none;
+	}
+
+	.li-head {
+		font-size: 1.25rem;
+		font-weight: 600;
+		padding-bottom: 4px;
+	}
+
+	.fmenu ul li {
+		color: var(--text);
+	}
+
+	.fmenu ul li a:hover {
+		color: var(--text-hover);
 	}
 
 	.fitem {
-		width: 33%;
 		padding: 8px;
+	}
+
+	.text {
+		width: 25%;
+	}
+
+	.topic {
+		font-size: 1.125rem;
 	}
 
 	.copyright {

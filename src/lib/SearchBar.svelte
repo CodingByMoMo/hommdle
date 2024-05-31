@@ -1,12 +1,20 @@
 <script>
 	import { units } from '$lib/units';
-	/** @type {{onkeydown: function(KeyboardEvent,String): void, type: string, guesses: string[]}} */
-	let { onkeydown, guesses, type } = $props();
+	/** @type {{onsearch: function(String): void, type: string, guesses: string[]}} */
+	let { onsearch, guesses, type } = $props();
 	let searchValue = $state();
 	const unitsHints = units.map((unit) => {
 		return unit.Name;
 	});
 	const herosHints = ['Crag Hack', 'Mephala'];
+
+	/** @type{function(KeyboardEvent): void}*/
+	const search = function (event) {
+		if (event.code === 'Enter') {
+			if (unitsHints.includes(searchValue)) onsearch(searchValue);
+			searchValue = '';
+		}
+	};
 </script>
 
 <input
@@ -15,10 +23,7 @@
 	list="hints"
 	placeholder="Type name of a unit..."
 	bind:value={searchValue}
-	onkeydown={(event) => {
-		onkeydown(event, searchValue);
-		searchValue = '';
-	}}
+	onkeydown={search}
 />
 
 <datalist id="hints">
@@ -37,11 +42,12 @@
 
 <style>
 	input {
-		padding: 8px;
-		color: #fdfdfd;
+		font-size: 1.5rem;
+		padding: 10px;
+		color: var(--text);
 		border-radius: 24px;
-		background-color: #453d58;
+		background-color: var(--bg-accent);
 		width: 60%;
-		border: 2px solid #060508;
+		border: 2px solid var(--accent-color);
 	}
 </style>

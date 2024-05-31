@@ -14,7 +14,8 @@ export const units = new Map([
     Cost: 60,
     Growth: 14,
     Aligment: "Good",
-    Special: "Immune to jousting"
+    Special: "Immune to jousting",
+    Image: "Pikeman.jpeg"
   }],
   ["Halberdier",{
     ID: "Cas1U",
@@ -31,7 +32,8 @@ export const units = new Map([
     Cost: 75,
     Growth: 14,
     Aligment: "Good",
-    Special: "Immune to jousting"
+    Special: "Immune to jousting",
+    Image: "Halberdier.jpeg"
   }],
   ["Archer",{
     ID: "Cas2",
@@ -47,7 +49,8 @@ export const units = new Map([
     Health: 10,
     Cost: 100,
     Growth: 9,
-    Aligment: "Good"
+    Aligment: "Good",
+    Image: "Archer.jpeg"
   }],
   ["Marksman",{
     ID: "Cas2U",
@@ -64,7 +67,8 @@ export const units = new Map([
     Cost: 150,
     Growth: 9,
     Aligment: "Good",
-    Special: "Ranged (24 shots), Double attack"
+    Special: "Ranged (24 shots), Double attack",
+    Image: "Marksman.jpeg"
   }],
   ["Griffin",{
     ID: "Cas3",
@@ -81,7 +85,8 @@ export const units = new Map([
     Cost: 200,
     Growth: 7,
     Aligment: "Good",
-    Special: "Flying, Two retaliations"
+    Special: "Flying, Two retaliations",
+    Image: "Griffin.jpeg"
   }],
   ["Royal Griffin",{
     ID: "Cas3U",
@@ -98,7 +103,8 @@ export const units = new Map([
     Cost: 240,
     Growth: 7,
     Aligment: "Good",
-    Special: "Flying, Unlimited retaliations"
+    Special: "Flying, Unlimited retaliations",
+    Image: "RoyalGriffin.jpeg"
   }],
   ["Swordsman",{
     ID: "Cas4",
@@ -115,7 +121,8 @@ export const units = new Map([
     Cost: 300,
     Growth: 4,
     Aligment: "Good",
-    Special: "No speciallity"
+    Special: "No speciallity",
+    Image: "Swordsman.jpeg"
   }],
   ["Crusader",{
     ID: "Cas4U",
@@ -132,7 +139,8 @@ export const units = new Map([
     Cost: 400,
     Growth: 4,
     Aligment: "Good",
-    Special: "Double attack"
+    Special: "Double attack",
+    Image: "Crusader.jpeg"
   }],
   ["Monk",{
     ID: "Cas5",
@@ -149,7 +157,8 @@ export const units = new Map([
     Cost: 400,
     Growth: 3,
     Aligment: "Good",
-    Special: "Ranged (12 shots)"
+    Special: "Ranged (12 shots)",
+    Image: "Monk.jpeg"
   }],
   ["Zealot",{
     ID: "Cas5U",
@@ -166,7 +175,8 @@ export const units = new Map([
     Cost: 450,
     Growth: 3,
     Aligment: "Good",
-    Special: "Ranged (24 shots), No melee penalty"
+    Special: "Ranged (24 shots), No melee penalty",
+    Image: "Zelot.jpeg"
   }],
   ["Cavalier",{
     ID: "Cas6",
@@ -183,7 +193,8 @@ export const units = new Map([
     Cost: 1000,
     Growth: 2,
     Aligment: "Good",
-    Special: "Jousting"
+    Special: "Jousting",
+    Image: "Cavaleryman.jpeg"
   }],
   ["Champion",{
     ID: "Cas6U",
@@ -200,7 +211,8 @@ export const units = new Map([
     Cost: 1200,
     Growth: 2,
     Aligment: "Good",
-    Special: "Jousting"
+    Special: "Jousting",
+    Image: "Champion.jpeg"
   }],
   ["Angel",{
     ID: "Cas7",
@@ -217,7 +229,8 @@ export const units = new Map([
     Cost: "3000, 1 gem",
     Growth: 1,
     Aligment: "Good",
-    Special: "Flying, Hates Devils, Morale +1"
+    Special: "Flying, Hates Devils, Morale +1",
+    Image: "Angel.jpeg"
   }],
   ["Archangel",{
     ID: "Cas7U",
@@ -234,6 +247,7 @@ export const units = new Map([
     Cost: "5000, 3 gem",
     Growth: 1,
     Aligment: "Good",
-    Special: "Flying, Hates Devils, Resurrection, Morale +1"
+    Special: "Flying, Hates Devils, Resurrection, Morale +1",
+    Image: "Archangel.jpeg"
   }]
 ]);

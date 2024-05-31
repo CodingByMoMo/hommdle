@@ -11,14 +11,12 @@
 	/** @type{String[] } */
 	let triesList = $state([]);
 
-	/** @type{function(KeyboardEvent,String): void}*/
-	function onkeydown(event, value) {
-		if (event.code === 'Enter') {
-			console.log(value);
-			tries += 1;
-			triesList.push(value);
-			//search for the units or herose
-		}
+	/** @type{function(String): void}*/
+	function onsearch(value) {
+		console.log(value);
+		tries += 1;
+		triesList.push(value);
+		//search for the units or herose
 	}
 </script>
 
@@ -27,7 +25,7 @@
 </div>
 <div class="search-container">
 	<div class="tries"><span>Guess {tries} of {MAX_TRIES}</span></div>
-	<SearchBar {onkeydown} type="units" guesses={triesList} />
+	<SearchBar {onsearch} type="units" guesses={triesList} />
 </div>
 <GuessList guessList={triesList} type="units" current={CURRENT} />
 

@@ -1,17 +1,22 @@
 <script>
 	import { units } from '$lib/units';
-	/** @type {{onsearch: function(String): void, type: string, guesses: string[]}} */
-	let { onsearch, guesses, type } = $props();
+	import { guesses, tries } from '$lib/store';
+	/** @type {{type: string}} */
+	let { type } = $props();
 	let searchValue = $state();
 	const unitsHints = units.map((unit) => {
 		return unit.Name;
 	});
 	const herosHints = ['Crag Hack', 'Mephala'];
 
+	/** @type{function(string): void} */
+	const updateGuesses = function (value) {
+		$guesses = [...$guesses, value];
+	};
 	/** @type{function(KeyboardEvent): void}*/
 	const search = function (event) {
 		if (event.code === 'Enter') {
-			if (unitsHints.includes(searchValue)) onsearch(searchValue);
+			if (unitsHints.includes(searchValue)) updateGuesses(searchValue);
 			searchValue = '';
 		}
 	};
@@ -29,7 +34,7 @@
 <datalist id="hints">
 	{#if type === 'units'}
 		{#each unitsHints as hint}
-			{#if !guesses.includes(hint)}
+			{#if !$guesses.includes(hint)}
 				<option value={hint}></option>
 			{/if}
 		{/each}

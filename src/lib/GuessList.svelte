@@ -1,29 +1,36 @@
 <script>
-	import { units } from './unitsMap';
+	import { onDestroy } from 'svelte';
+	import { guesses } from './store';
+	import { units } from './unitsMap.js';
 
 	/** @typedef Props
-	 * @property {String[]} guessList
 	 * @property {String} type
 	 * @property {any} current
 	 * */
 
 	/** @type {Props} */
-	let { guessList, type, current } = $props();
-
-	/** @type any[] */
-	let guesses = $derived.by(() => {
-		/** @type any[] */
+	let { type, current } = $props();
+	/** @type {any[]} */
+	let guessList = $state([]);
+	let unsubscribe = guesses.subscribe((value) => {
+		guessList = value;
+	});
+	/** @type {any[]} */
+	let guessesList = $derived.by(() => {
+		/** @type {any[]} */
 		let returnable = [];
-		for (const item of guessList) {
-			returnable.push(units.get(item));
-		}
+		guessList.forEach((guess) => {
+			returnable.push(units.get(guess));
+		});
 		return returnable;
 	});
+
+	onDestroy(unsubscribe);
 </script>
 
 <div class="container">
 	<ul class="guess-list">
-		{#each guesses as guess}
+		{#each guessesList as guess}
 			<li>
 				{#if guess.Name === current.Name}
 					Yey - {guess.Name}
